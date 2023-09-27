@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Redirect</title>
+    <meta http-equiv="refresh" content="100; url=$(link-status)">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script language="JavaScript">
+        function startClock() {
+            $(if popup == 'true')
+                open('$(link-status)', 'hotspot_status', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=290,height=200');
+            $(endif)
+            location.href = '$(link-redirect)';
+        }
+    </script>
+</head>
+<body onLoad="startClock()">
+<div class="panel">
+    <form class="login" style="padding-top: 50%;">
+        <img src="img/load.svg" class="img-resposive"/>
+        <p class="text-white"><em>
+            <small>تم تسجيل دخول وجاري تحويلك<br/>
+                اذا لم يتم تحويلك اضغط على ادناه
+            </small>
+        </em></p>
+        <a href="$(link-status)" class="btn btn-login text-space">إذهب</a>
+    </form>
+</div>
+</body>
+</html>

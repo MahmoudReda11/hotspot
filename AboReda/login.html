@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>تسجيل دخول</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+   
+</head>
+<body>
+$(if chap-id)
+<form name="sendin" action="$(link-login-only)" method="post">
+    <input type="hidden" name="username"/>
+    <input type="hidden" name="password"/>
+    <input type="hidden" name="dst" value="$(link-orig)"/>
+    <input type="hidden" name="popup" value="true"/>
+</form>
+<script type="text/javascript" src="md5.js"></script>
+<script type="text/javascript">
+    <!--
+    function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+        document.sendin.submit();
+        return false;
+    }
+
+    //-->
+</script>
+$(endif)
+<div class="panel bg">
+
+    <form class="login" name="login" action="$(link-login-only)" method="post"
+          $(if chap-id) onSubmit="return doLogin()" $(endif)>
+          <div class="cardman">
+            <div class="content">
+                <img src="img/cafeee.png" alt="">
+               
+            </div>
+        </div>
+        
+
+        <div class="btm-dev">
+            <input type="hidden" name="dst" value="$(link-orig)"/>
+        <input type="hidden" name="popup" value="true"/>
+        $(if error) <p class="pesan text-danger">$(error)</p> $(endif)
+		<h5 class="text-space">تسجيل الدخول بأستخدام الكارت</h5>
+        <div id="toggle_form" class="head-login">
+           <input type="text" name="username" class="username" placeholder="ادخـــل الــرقــم" autocomplete="off" onkeypress="return restrictAlphabets(event)" required />
+           <input type="hidden" name="password"/>
+           <svg class="pen" style="enable-background:new 0 0 24 24;" version="1.1" width="24" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+            .st0{opacity:0.2;fill:none;stroke:#000000;stroke-width:5.000000e-02;stroke-miterlimit:10;}
+        </style><g id="grid_system"/><g id="_icons"><g><path d="M21.1,2.9c-1.1-1.1-3-1.1-4.2,0l-8.1,7.9c-0.7,0.7-1.2,1.6-1.4,2.6L7,15.6c-0.1,0.3,0,0.7,0.3,0.9    c0.2,0.2,0.4,0.3,0.7,0.3c0.1,0,0.1,0,0.2,0l2.2-0.4c1-0.2,1.9-0.7,2.6-1.4L21.1,7C21.7,6.5,22,5.7,22,4.9    C22,4.1,21.7,3.4,21.1,2.9z M11.7,13.5c-0.4,0.4-1,0.7-1.6,0.8l-0.8,0.2l0.2-0.7c0.1-0.6,0.4-1.1,0.9-1.6l6.2-6.1l1.4,1.3    L11.7,13.5z M19.7,5.6L19.3,6l-1.4-1.3l0.4-0.4C18.5,4.1,18.8,4,19,4c0.3,0,0.5,0.1,0.7,0.3C19.9,4.5,20,4.7,20,4.9    C20,5.1,20,5.4,19.7,5.6z"/><path d="M20,9.9c-0.6,0-1,0.4-1,1V16c0,1.7-1.3,3-3,3H8c-1.7,0-3-1.3-3-3V8c0-1.7,1.3-3,3-3h5c0.6,0,1-0.4,1-1s-0.4-1-1-1H8    C5.2,3,3,5.2,3,8v8c0,2.8,2.2,5,5,5h8c2.8,0,5-2.2,5-5v-5.1C21,10.4,20.6,9.9,20,9.9z"/></g></g></svg>
+         </div>
+        <button type="submit" class="btn-login text-space">تسجيل دخول <svg width="24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M346.65 304.3a136 136 0 0 0-180.71 0 21 21 0 1 0 27.91 31.38 94 94 0 0 1 124.89 0 21 21 0 0 0 27.91-31.4Z" fill="#ffffff" class="fill-000000"></path><path d="M256.28 183.7a221.47 221.47 0 0 0-151.8 59.92 21 21 0 1 0 28.68 30.67 180.28 180.28 0 0 1 246.24 0 21 21 0 1 0 28.68-30.67 221.47 221.47 0 0 0-151.8-59.92Z" fill="#ffffff" class="fill-000000"></path><path d="M462 175.86a309 309 0 0 0-411.44 0 21 21 0 1 0 28 31.29 267 267 0 0 1 355.43 0 21 21 0 0 0 28-31.31Z" fill="#ffffff" class="fill-000000"></path><circle cx="256.28" cy="393.41" r="32" fill="#ffffff" class="fill-000000"></circle></svg></button>
+        </div>
+
+      
+    </form>
+</div>
+<script>
+    function restrictAlphabets(e) {
+        var x = e.which || e.keycode;
+        if ((x >= 48 && x <= 57))
+            return true;
+        else
+            return false;
+    }
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    document.login.username.focus();
+</script>
+</body>
+</html>

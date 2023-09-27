@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>تسجيل الخروج</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<script language="JavaScript">
+    function openLogin() {
+        if (window.name != 'hotspot_logout') return true;
+        open('$(link-login)', '_blank', '');
+        window.close();
+        return false;
+    }
+</script>
+<div class="panel bg">
+    <form class="login" action="$(link-login)" name="login" onSubmit="return openLogin()">
+        <img src="img/user.png" class="img-circle img-thumbnail" width="80"/>
+        <p class="user"><span class="name">شكرا لك, $(username)</span></p>
+        <p>
+            <small>تم تسجيل الخروج</br>
+                تم تسجيل خروجك بنجاح نتمنى لك وقت سعيدا.
+            </small>
+        </p>
+        <div class="head-login">
+            <div class="status">
+                <p>اسم المستخدم : $(username)</p>
+                <div class="line"></div>
+                <p>عنوان الايبي : $(ip)</p>
+                <div class="line"></div>
+                <p>الماك ادرس : $(mac)</p>
+                <div class="line"></div>
+                $(if session-time-left)
+				<p>وقت الجلسة : $(uptime)</p>
+                <p>باقي لجلستك : $(session-time-left)</p>
+                $(else)
+				<p>وقت الجلسة : $(uptime)</p>
+                $(endif)
+                <div class="line"></div>
+                <p>بايت تنزيل/تحميل : $(bytes-in-nice) / $(bytes-out-nice)</p>
+				<div class="line"></div>
+				$(if limit-bytes-total)
+                <p>الكوتة : $(if limit-bytes-total)
+                <script type="text/javascript">result = ($(limit - bytes - total) / 1000000000).toFixed(2)
+                document.write(result)</script> 
+				GiB
+				$(else)
+                $(if limit-bytes-total == '')
+				Unlimited
+				$(endif)
+				$(endif)
+                </p>
+                $(else)
+                <p>الكوتة : $(if limit-bytes-out)
+                <script type="text/javascript">result = ($(limit - bytes - out) / 1000000000).toFixed(2)
+                document.write(result)</script> 
+				GiB
+                $(else)
+                $(if limit-bytes-out == '')
+				Unlimited
+				$(endif)
+				$(endif)
+				</p>
+                $(endif)
+            </div>
+        </div>
+        <button type="submit" class="btn-login text-space">تسجيل دخول</button>
+    </form>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

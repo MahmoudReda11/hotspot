@@ -1,0 +1,451 @@
+@font-face {
+	font-family: "coco";
+	src:url(../font/CoconNextArabicLight.otf);
+}
+/* @import url('https://fonts.googleapis.com/css?family=PT+Sans'); */
+body { background: #f3f3f3; margin: 0px; padding: 0px;
+	/*  font-family: 'PT Sans', sans-serif; */
+	font-family: "coco";
+	background: #333;
+}
+
+*:focus {
+    outline: none;
+}
+img{
+	width: 100px;
+}
+.bg{
+	height: 100vh;
+	position: relative;
+	align-items: center;
+	margin: 0 auto;
+	overflow: hidden;
+	z-index: 1;
+	background: #333;
+}
+
+.teaimg{
+	position: absolute;
+	bottom: 30px;
+	left: 10px;
+	z-index: 1000;
+	width: 130px;
+}
+.bg .textt{
+	text-align: right;
+	padding-right: 20px;
+	position: absolute;
+	top: 40px;
+	right: 0;
+}
+.bg .textt p{
+	color: #fff;
+	font-size: 18px;
+}
+.bg .nameman{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 22px;
+	font-weight: bold;
+	color: #000;
+	background-color: #fff;
+	padding: 4px 6px 2px;
+	border-radius:0 0 15px 15px;
+
+
+}
+.panel-head {
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	color: #7e8cd2;
+}
+.pesan {
+	padding: 5px;
+	font-size: 12px;
+	font-style: italic;
+	color: #fff;
+	line-height: 1.4;
+}
+.pesan a {
+	color: #eee;
+	text-decoration: underline;
+}
+/* #CF8F2E */
+.login {
+	position: relative;
+	text-align: center;
+}
+.login input {
+	width: 100%;
+	height: 40px;
+	border: 0;
+	padding: 5px 45px 0 0;
+	text-align: right;
+	color: #fff;
+	font-size: 16px;
+	background-color: transparent;
+
+}
+.login input::placeholder{
+	color: #fff;
+}
+.login .head-login {
+	border-radius: 30px;
+	padding: 0 10px;
+	overflow: hidden;
+	width: 70%;
+	margin: auto;
+	position: relative;
+	background-color: #CF8F2E;
+	
+	border: 1px solid #fff;
+	/* box-shadow: inset 8px 8px 8px #1f1915e7, inset -8px -8px 8px #88624c; */
+}
+.login .line{
+	margin: 0 auto;
+	max-width: 90%;
+	border-bottom: 2px solid #ccd1ed;
+}
+.login .head-login  .username {
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.login .head-login  .password {
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+.full-fixed {
+	height: 80vh;
+	margin-top: 0px;
+	padding-right: 10px;
+	overflow-x: hidden;
+   	overflow-y: auto; 
+}
+.box {
+	background-color: #fff;
+	margin-bottom: 15px;
+	border: 1px solid #ccd1ed;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.30);
+}
+.box-head {
+	background-color: #7c8ad1;
+	padding: 10px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #fff;
+}
+.box-body {
+	padding: 10px;
+}
+.box-footer {
+	background-color: #7c8ad1;
+	padding: 10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	color: #fff;
+	font-size: 18px;
+}
+.btn-circle {
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 6px 0;
+	font-size: 12px;
+	line-height: 1.428571429;
+	border-radius: 15px;
+}
+.btn-circle.btn-lg {
+	width: 50px;
+	height: 50px;
+	border-radius: 35px;
+}
+
+.btn-login {
+	margin: 15px 10px;
+	min-width: 200px;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: 500;
+	color: #fff !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	outline: none;
+	gap: 10px;
+	margin: 15px auto;
+	border-radius: 30px;
+	background-color: #CF8F2E;
+
+	/* box-shadow: inset 8px 8px 8px #29211be7, inset -8px -8px 8px #77543e; */
+	
+	
+}
+.pen{
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	fill: #fff;
+
+}
+.btn-phone {
+	top: -25px;
+    position: relative;
+	padding: 0px 0px;
+	background: #ffe400;
+	border: 2px solid #7c8ad1;
+	font-size: 18px;
+	color: #4a548e;
+	box-shadow:  0 4px 6px rgba(0,0,0,0.30);
+}
+
+.text-space {
+	letter-spacing: normal;
+	color: #CF8F2E;
+	font-size: 16px;
+}
+.name-coffe{
+	font-size: 17px;
+}
+.text-purple {
+	color: #5f699f;
+}
+.text-white {
+	color: white;
+}
+.or {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  margin-top: -42px;
+  margin-bottom: 10px;
+  background: #1a405a;
+  border-top: 2px solid #d8d9e1;
+  border-radius: 99em;
+  text-align: center;
+  line-height: 2.5em;
+}
+.social {
+	text-align: center;
+	margin: 10px;
+}
+.status {
+	padding: 10px 5px;
+}
+.status p {
+	margin: 5px;
+}
+.img-thumbnail {
+    padding: 1px;
+}
+.user {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.user .name {
+	color: #fff;
+	padding: 5px 30px;
+	background: #5f699e;
+	border-radius: 8px;
+}
+.copy {
+	margin: 20px;
+	font-size: 80%;
+	color: #fff;
+}
+
+/*-------------------------------*/
+/*         Scrollbar 3           */
+/*-------------------------------*/
+
+#scrollbar3 ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+ 
+#scrollbar3 ::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 5px;
+}
+ 
+#scrollbar3 ::-webkit-scrollbar-thumb {
+    background-color: rgba(196, 202, 234,0.5);
+    border-radius: 5px;
+}
+
+#scrollbar3 ::-webkit-scrollbar-corner {
+}
+/*-------------------------------*/
+/*    Carousel Fade Transition   */
+/*-------------------------------*/
+
+#fade-quote-carousel.carousel {
+	padding-top: 10px;
+  padding-bottom: 20px;
+	min-height: 333px;
+}
+#fade-quote-carousel.carousel .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .active {
+  opacity: 1;
+  -webkit-transition-property: opacity;
+      -ms-transition-property: opacity;
+          transition-property: opacity;
+}
+#fade-quote-carousel.carousel .carousel-inner .item img {
+	max-width: 200px;
+	margin: 0 auto;
+}
+#fade-quote-carousel.carousel .carousel-indicators {
+	bottom: 10px;
+}
+#fade-quote-carousel.carousel .carousel-indicators > li {
+	background-color: #fff;
+	border: 1px solid #7e8cd2;
+}
+
+#fade-quote-carousel.carousel .carousel-indicators .active {
+	background-color: #7e8cd2;
+	border: none;
+}
+#fade-quote-carousel blockquote {
+    text-align: center;
+	padding: 0px 5px;
+	font-size: 14px;
+    border: none;
+}
+#fade-quote-carousel blockquote h2 {
+	font-size: 22px;
+	font-weight: bold;
+	color: #fff;
+	margin: 0px;
+}
+#fade-quote-carousel .profile-circle {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+
+.menu-open {
+	top: 20px;
+    padding-left: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #7e8cd2;
+    position: fixed;
+}
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgb(126, 140, 210);
+    background-color: rgba(126, 140, 210);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+
+}
+
+.overlay a {
+    padding: 3px;
+    text-decoration: none;
+    font-size: 24px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #5e6794;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    font-size: 54px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+    .panel {
+		min-height: 100vh;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		border-radius: 0px;
+    }
+}
+
+.cardman .content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 350px;
+}
+.btm-dev{
+	background: linear-gradient(#00000073,#00000073),url(../img/1.jpg);
+	height: calc(100vh - 350px);
+	border-top-left-radius: 70px;
+	background-position: bottom;
+	background-size: cover;
+	box-shadow: -5px -5px 12px #0202028f;
+}
+
+.cardman .content img{
+	width: 220px;
+	height: 220px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+}
+.cardman .content h4{
+	
+	font-size: 26px;
+	display: inline-block;
+	color: #fff;
+
+}
+
+.logo{
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	font-size: 30px;
+	color: #fff;
+	font-weight: bold;
+}
+
+.foffe{
+	width: 220px;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}

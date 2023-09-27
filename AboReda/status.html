@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>الحالة</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+    $(endif)
+    <script language="JavaScript">
+        $(if advert-pending=='yes')
+            var popup = '';
+
+        function focusAdvert() {
+            if (window.focus) popup.focus();
+        }
+
+        function openAdvert() {
+            popup = open('$(link-advert)', 'hotspot_advert', '');
+            setTimeout("focusAdvert()", 1000);
+        }
+
+        $(endif)
+
+        function openLogout() {
+            if (window.name != 'hotspot_status') return true;
+            open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+            window.close();
+            return false;
+        }
+    </script>
+</head>
+<body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0"
+      $(if advert-pending=='yes')
+      onLoad="openAdvert()"
+      $(endif)>
+
+<div class="panel bg">
+    <form class="login" action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+        $(if login-by == 'trial')
+        <img src="img/user.png" class="img-circle img-thumbnail" width="80"/>
+        <p class="user"><span class="name">مستخدم</span></p>
+        $(elif login-by != 'mac')
+        <img src="img/user.png" class="img-circle img-thumbnail" width="80"/>
+        <p class="user"><span class="name">$(username)</span></p>
+        $(endif)
+        <p>
+            <small>أهلا بك</br>
+			أهلا وسهلا بك فى كوكب الشرق كافيه نتشرف بوجودك بيننا
+            </small>
+        </p>
+        <div class="head-login">
+            <div class="status">
+                <p>عنوان الايبي: $(ip)</p>
+				<div class="line"></div>
+				<p>الماك ادرس: $(mac)</p>
+                <div class="line"></div>
+                $(if session-time-left)
+                <p>متصل منذ : $(uptime)</p>
+                <p>متبقي لك : $(session-time-left)</p>
+                $(else)
+                <p>متصل منذ : $(uptime)</p>
+                $(endif)
+				<div class="line"></div>
+                <p>بايت تنزيل/تحميل : $(bytes-in-nice) / $(bytes-out-nice)</p>
+				<div class="line"></div>
+				$(if limit-bytes-total)
+                <p>الكوتة : $(if limit-bytes-total)
+                <script type="text/javascript">result = ($(limit - bytes - total) / 1000000000).toFixed(2)
+                document.write(result)</script> 
+				GiB
+				$(else)
+                $(if limit-bytes-total == '')
+				Unlimited
+				$(endif)
+				$(endif)
+                </p>
+                $(else)
+                <p>الكوتة : $(if limit-bytes-out)
+                <script type="text/javascript">result = ($(limit - bytes - out) / 1000000000).toFixed(2)
+                document.write(result)</script> 
+				GiB
+                $(else)
+                $(if limit-bytes-out == '')
+				Unlimited
+				$(endif)
+				$(endif)
+				</p>
+                $(endif)
+				 <div class="line"></div>
+                $(if blocked == 'yes')
+                <p>الحالة : advertisement required</p>
+                <div class="line"></div>
+                $(elif refresh-timeout)
+                <p>تحديث الحالة : $(refresh-timeout)</p>
+                $(endif)
+            </div>
+        </div>
+        <button type="submit" class="btn-login text-space">تسجيل خروج</button>
+    </form>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
